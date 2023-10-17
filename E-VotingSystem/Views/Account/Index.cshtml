@@ -8,16 +8,16 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - E_VotingSystem</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/font-awesome.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/images/bg.jpg" asp-append-version="true" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - E_VotingSystem</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/font-awesome.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/images/bg.jpg" asp-append-version="true" />
 
 
-    <link rel="stylesheet" href="~/E_VotingSystem.styles.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/E_VotingSystem.styles.css" asp-append-version="true" />
 	<title>Login</title>
 </head>
 <body>
@@ -28,14 +28,13 @@
 	<div class="w3ls-login box box--big">
 		<!-- form starts here -->
 		<form asp-controller="Account" asp-action="Verify" method="post">
-
 			<div class="agile-field-txt">
-				<label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
-				<input type="text" name="PrUserName" placeholder="Enter User Name" required="" />
+				<label><i class="fa fa-user" aria-hidden="true"></i> MembershipID</label>
+				<input type="text" name="MembershipID" placeholder="Enter MembershipID" required="" />
 			</div>
 			<div class="agile-field-txt">
-				<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
-				<input type="password" name="PrPassword" placeholder="Enter Password" required="" id="myInput" />
+				<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Password</label>
+				<input type="password" name="Password" placeholder="Enter Password" required="" id="myInput" />
 				<div class="agile_label">
 					<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
 					<label class="check" for="check3">Show password</label>
@@ -73,3 +72,5 @@
 	<script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
+
+
