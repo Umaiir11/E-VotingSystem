@@ -61,10 +61,15 @@ namespace E_VotingSystem.Controllers
 
                 if (l_MobileFieldEmpty)
                 {
-                    return View("Error");
+                    return View("ErrorMobile");
                 }
 
-                return RedirectToAction("Index", "Profile", l_ModloggedInUser);
+                else {
+
+                    return RedirectToAction("Index", "Profile", l_ModloggedInUser);
+
+                }
+
             }
             else
             {
