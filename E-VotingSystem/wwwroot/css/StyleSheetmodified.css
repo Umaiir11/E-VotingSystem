@@ -13600,6 +13600,10 @@ th {
     text-align: right;
 }
 
+.text-right {
+    text-align: left;
+}
+
 
 
 

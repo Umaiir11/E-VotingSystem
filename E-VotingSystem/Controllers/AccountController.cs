@@ -32,7 +32,6 @@ namespace E_VotingSystem.Controllers
             l_SqlCommand.Parameters.AddWithValue("@MembershipID", lModUser.MembershipID);
             l_SqlCommand.Parameters.AddWithValue("@Password", lModUser.Password);
             l_SqlDataReader = l_SqlCommand.ExecuteReader();
-            bool l_MobileFieldEmpty = false;
 
             if (l_SqlDataReader.Read())
             {
@@ -49,33 +48,22 @@ namespace E_VotingSystem.Controllers
                     CompanysName = l_SqlDataReader["CompanysName"] as string,
                     Region = l_SqlDataReader["Region"] as string,
                     Password = lModUser.Password, // Set the password from the user input
-                    Mobile = l_SqlDataReader["Mobile"] as int?,
+                    Mobile = l_SqlDataReader["Mobile"] as string,
                     ContactNo = l_SqlDataReader["ContactNo"] as int?
                 };
-
-                if (!l_ModloggedInUser.Mobile.HasValue)
-                {
-                    l_MobileFieldEmpty = true;
-                }
                 l_SqlConnection.Close();
 
-                if (l_MobileFieldEmpty)
+                if (String.IsNullOrEmpty(l_ModloggedInUser.Mobile))
                 {
                     return View("ErrorMobile");
                 }
+               
 
-                else {
-
-                    return RedirectToAction("Index", "Profile", l_ModloggedInUser);
-
-                }
-
+                return RedirectToAction("Index", "OTP", l_ModloggedInUser);
             }
-            else
-            {
-                l_SqlConnection.Close();
-                return View("ErrorPassword"); // Password is incorrect
-            }
+
+            l_SqlConnection.Close();
+            return View("ErrorPassword"); // Password is incorrect
         }
     }
 }

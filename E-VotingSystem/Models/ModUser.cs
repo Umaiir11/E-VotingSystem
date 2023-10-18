@@ -10,7 +10,7 @@
 		public string? Address1 { get; set; }
 		public string? Address2 { get; set; }
 		public string? Email { get; set; }
-		public int? Mobile { get; set; }
+		public string? Mobile { get; set; }
 		public string? FounderMembers { get; set; }
 		public string? LifeAndAnnualMembers { get; set; }
 		public string? CompanysName { get; set; }
