@@ -18,10 +18,10 @@ function render() {
 }
 
 function phoneAuth() {
-    alert("Called");
+  //  alert("Called");
     debugger;
     var a = document.getElementById("number").value;
-    alert("the value of a is " + a);
+   // alert("the value of a is " + a);
     var number = a;
 
     const appVerifier = window.recaptchaVerifier;
@@ -44,13 +44,13 @@ function handlePhoneAuthError(error) {
     } else if (error.message == 'TOO_SHORT') {
         alert("Please make sure you enter a valid number, add the Country Code like: +92334xxxx..");
     } else {
-        alert("Error Occurred");
+       // alert("Error Occurred");
     }
     console.error("Error from sending OTP to phone:", error);
 }
 
 function verifyOTP() {
-    alert("VerifyCalled");
+   // alert("VerifyCalled");
     var otp = "";
     for (var i = 1; i < 7; i++) {
         var inputElement = document.querySelector(".form-control" + i);
@@ -63,7 +63,7 @@ function verifyOTP() {
             .then((result) => {
                 console.log("Code verified:", result);
                 alert("Code verified!");
-                window.Location.href="/Profile/Index"
+                window.location.href = "/Profile/Index";
               
             })
             .catch((error) => {

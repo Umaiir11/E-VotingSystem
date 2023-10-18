@@ -5,8 +5,11 @@ namespace E_VotingSystem.Controllers
 {
     public class ProfileController : Controller
     {
-        public IActionResult Index(ModUser l_ModLoggedInUser)
+        public IActionResult Index()
         {
+            ModUser l_ModLoggedInUser = new ModUser();
+            l_ModLoggedInUser = HttpContext.Session.Get<ModUser>("LoggedinUser")!;
+            
             return View(l_ModLoggedInUser);
         }
 

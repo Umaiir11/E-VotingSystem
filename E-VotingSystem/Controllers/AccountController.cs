@@ -53,11 +53,13 @@ namespace E_VotingSystem.Controllers
                 };
                 l_SqlConnection.Close();
 
+
                 if (String.IsNullOrEmpty(l_ModloggedInUser.Mobile))
                 {
                     return View("ErrorMobile");
                 }
-               
+
+                HttpContext.Session.Set<ModUser>("LoggedinUser", l_ModloggedInUser);
 
                 return RedirectToAction("Index", "OTP", l_ModloggedInUser);
             }
